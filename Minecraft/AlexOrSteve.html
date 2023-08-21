@@ -73,10 +73,10 @@
 		}
 
 		function result(uid) {
-			let 0_31 = parseInt(uid.substring(24, 31), 16), 32_63 = parseInt(uid.substring(16, 23), 16),
-				64_95, parseInt(uid.substring(8, 15), 16), 96_128 = parseInt(uid.substring(0, 7), 16);
+			let _0_31 = parseInt(uid.substring(24, 31), 16), _32_63 = parseInt(uid.substring(16, 23), 16),
+				_64_95 = parseInt(uid.substring(8, 15), 16), _96_128 = parseInt(uid.substring(0, 7), 16);
 
-			let res = 0_31 ^ 32_63 ^ 64_95 ^ 96_128;
+			let res = _0_31 ^ _32_63 ^ _64_95 ^ _96_128;
 
 			const results = [
 				'Alex',
