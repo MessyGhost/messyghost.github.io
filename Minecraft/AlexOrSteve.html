@@ -73,9 +73,10 @@
 		}
 
 		function result(uid) {
-			let most = parseInt(uid.substring(0, 15), 16), least = parseInt(uid.substring(16), 16);
-			let res = most ^ least;
-			res = (res >> 32) ^ (res & 0xffffffff);
+			let 0_31 = parseInt(uid.substring(24, 31), 16), 32_63 = parseInt(uid.substring(16, 23), 16),
+				64_95, parseInt(uid.substring(8, 15), 16), 96_128 = parseInt(uid.substring(0, 7), 16);
+
+			let res = 0_31 ^ 32_63 ^ 64_95 ^ 96_128;
 
 			const results = [
 				'Alex',
