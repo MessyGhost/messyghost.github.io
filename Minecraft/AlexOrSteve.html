@@ -56,7 +56,9 @@
 	</div>
 	<script>
 		function isUUID(uid) {
-			return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(uid);
+			return 
+				/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(uid) ||
+				/^[0-9a-fA-F]{32}$/.test(uid);
 		}
 
 		function resultPrevious(uid) {
@@ -98,8 +100,8 @@
 			let uid = uidIn.value;
 
 			if (uid.length > 0) {
-				uid = uid.replace(/-/g, '');
 				if(isUUID(uid)){
+					uid = uid.replace(/-/g, '');
 					output.textContent = `${resultPrevious(uid)}  /  ${result(uid)}`;
 				}
 				else {
